@@ -8,6 +8,16 @@
 import java.util.Scanner;
 
 public class GuessGame {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+
+		System.out.println("Choose Guessing Game");
+		System.out.println("Type '1' for First Game and '2' for Second Game");
+		System.out.println("Type '3' to Quit");
+		System.out.println("----------------");
+		GuessGame.play();
+	}
+
 	public static void play1() { // method to play game 1
 
 		int numReal = (int) ((10 - 1 + 1) * Math.random() + 1);
