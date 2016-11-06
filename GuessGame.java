@@ -1,6 +1,6 @@
 
 /**
- * Inlab6 number guessing game.
+ * Number guessing game.
  * 
  * @author Cole Doty
  * @version 07Oct16
@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class GuessGame {
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
 
 		System.out.println("Choose Guessing Game");
+		System.out.println();
 		System.out.println("Type '1' for First Game and '2' for Second Game");
 		System.out.println("Type '3' to Quit");
-		System.out.println("----------------");
+		System.out.println("------------------------------------------------");
 		GuessGame.play();
 	}
 
@@ -39,6 +39,10 @@ public class GuessGame {
 			if (num == numReal) {
 				win = true;
 				System.out.println("Correct!");
+				System.out.println("------------------------------------------------");
+				System.out.println("Type '1' for First Game and '2' for Second Game");
+				System.out.println("Type '3' to Quit");
+				System.out.println("------------------------------------------------");
 				play();
 				return;
 			} else if (num < numReal) {
@@ -52,7 +56,6 @@ public class GuessGame {
 	public static void play() {
 		Scanner in = new Scanner(System.in);
 		int choice2 = -1;
-		System.out.println("Choose option 1, 2, or 3 ");
 
 		while (choice2 < 1 || choice2 > 3) {
 
@@ -79,7 +82,6 @@ public class GuessGame {
 
 		Scanner in = new Scanner(System.in);
 
-		System.out.println(numReal);
 		System.out.println("Game 2:");
 		System.out.println("You have 5 guesses to guess the random number that has been generated between 5 and 25");
 		System.out.println();
@@ -93,13 +95,22 @@ public class GuessGame {
 
 			if (num == numReal) {
 				System.out.println("Correct!");
+				System.out.println("------------------------------------------------");
+				System.out.println("Type '1' for First Game and '2' for Second Game");
+				System.out.println("Type '3' to Quit");
+				System.out.println("------------------------------------------------");
 				play();
 				return;
-			} else if (num < numReal && numGuess <5) {
+			} else if (num < numReal && numGuess < 5) {
 				System.out.println("Bigger!");
 			} else if (num > numReal) {
 				System.out.println("Smaller!");
 			} else if (numGuess == 5 && num != numReal) {
+				System.out.println("Exceeded number of guesses.");
+				System.out.println("------------------------------------------------");
+				System.out.println("Type '1' for First Game and '2' for Second Game");
+				System.out.println("Type '3' to Quit");
+				System.out.println("------------------------------------------------");
 				play();
 				return;
 			}
